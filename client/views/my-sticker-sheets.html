@@ -1,0 +1,15 @@
+<section>
+  <article ng-repeat="r in stickerSheets.slice().reverse()">
+    <header>
+      <h1>{{r.date | date}} | {{r.place.name}}</h1>
+      <h2>{{r.user.email}}</h2>
+    </header>
+
+    <p>{{r.count}}</p>
+
+    <div id="stickersheet">
+    	<div ng-repeat="sticker in stickers" class="sticker" ng-class="{ 'active' : $index <= stickerCount() }"></div>
+    </div>
+
+  </article>
+</section>

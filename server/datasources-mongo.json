@@ -1,0 +1,11 @@
+{
+  "myDatabase": {
+    "host": "ds013848.mongolab.com",
+    "port": 13848,
+    "database": "stickerdb",
+    "username": "wadebekker",
+    "password": "wadebekker",
+    "name": "myDatabase",
+    "connector": "mongodb"
+  }
+}

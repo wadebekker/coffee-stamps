@@ -1,0 +1,15 @@
+<section>
+  <article ng-repeat="r in stickerSheets.slice().reverse()">
+    <header>
+      <h1>{{r.date | date}} | {{r.place.name}}</h1>
+      <h2>{{r.user.email}}</h2>
+    </header>
+
+    <p>{{r.count}}</p>
+
+    <div class="actions" ng-show="currentUser">
+      <button ui-sref="edit-sticker-sheet({ id: r.id })">Edit</button>
+      <button a ui-sref="delete-sticker-sheet({ id: r.id })">Delete</button>
+    </div>
+  </article>
+</section>

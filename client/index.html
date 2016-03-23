@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>loopback-getting-started-intermediate</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Coffee Shop Sticker-sheets</h1>
+      <h2 ng-show="currentUser">Hello {{currentUser.email}}</h2>
+      <nav>
+        <ul>
+          <li ng-show="isAdmin">
+            <a ui-sref="all-sticker-sheets" ui-sref-active="active">All Sticker-sheests</a>
+          </li>
+          <li ng-show="isGuest">
+            <a ui-sref="my-sticker-sheets" ui-sref-active="active">My Sticker-sheets</a>
+          </li>
+          <!--
+          <li ng-show="currentUser">
+            <a ui-sref="add-sticker-sheet" ui-sref-active="active">Add Sticker-sheet</a>
+          </li>
+          -->
+          <li ng-hide="currentUser">
+            <a ui-sref="login" ui-sref-active="active">Log in</a>
+          </li>
+          <li ng-show="currentUser">
+            <a ui-sref="logout" ui-sref-active="active">Log out</a>
+          </li>
+          <li ng-hide="currentUser">
+            <a ui-sref="sign-up" ui-sref-active="active">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main ui-view></main>
+
+    <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-resource.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/lb-services.js"></script>
+    <script src="js/controllers/auth.js"></script>
+    <script src="js/controllers/stickersheet.js"></script>
+    <script src="js/services/auth.js"></script>
+  </body>
+</html>

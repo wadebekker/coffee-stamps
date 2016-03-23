@@ -1,0 +1,23 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "allowAccess": {
+      "type": "boolean"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "stickerSheets": {
+      "type": "hasMany",
+      "model": "stickerSheet",
+      "foreignKey": "publisherId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,51 @@
+<section>
+  <form name="form" ng-submit="submitForm()">
+    <fieldset>
+      <legend>{{action}} sticker-sheet form</legend>
+
+      <div class="form-group">
+        <label>Coffee shop name</label>
+        <select
+            ng-disabled="isDisabled"
+            ng-model="selectedShop"
+            ng-options="shop as shop.name for shop in places"></select>
+      </div>
+
+      <div class="form-group">
+        <label>Sticker Count</label>
+        <input type="radio" ng-model="stickerSheet.count" value="0">0
+        <input type="radio" ng-model="stickerSheet.count" value="1">1
+        <input type="radio" ng-model="stickerSheet.count" value="2">2
+        <input type="radio" ng-model="stickerSheet.count" value="3">3
+        <input type="radio" ng-model="stickerSheet.count" value="4">4
+        <input type="radio" ng-model="stickerSheet.count" value="5">5
+        <input type="radio" ng-model="stickerSheet.count" value="6">6
+        <input type="radio" ng-model="stickerSheet.count" value="7">7
+        <input type="radio" ng-model="stickerSheet.count" value="8">8
+        <input type="radio" ng-model="stickerSheet.count" value="9">9
+        <input type="radio" ng-model="stickerSheet.count" value="10">10
+      </div>
+
+      <!-- 
+      <div class="form-group">
+        <label>Rating</label>
+        <input type="radio" ng-model="review.rating" value="1">1&#9733;
+        <input type="radio" ng-model="review.rating" value="2">2&#9733;
+        <input type="radio" ng-model="review.rating" value="3">3&#9733;
+        <input type="radio" ng-model="review.rating" value="4">4&#9733;
+        <input type="radio" ng-model="review.rating" value="5">5&#9733;
+      </div>
+
+      <div class="form-group">
+        <label>Comments</label>
+        <textarea ng-model="review.comments"></textarea>
+      </div>
+      -->
+
+      <div class="actions">
+        <label></label>
+        <button>{{action}} Sticker-sheet</button>
+      </div>
+    </fieldset>
+  </form>
+<section>
