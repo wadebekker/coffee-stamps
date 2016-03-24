@@ -1,15 +1,47 @@
 <section>
+<div style="padding: 20px;">
+  <header>
+      <div class="logo"></div>
+      <nav>
+        <ul>
+          <li ng-show="isAdmin">
+            <a ui-sref="all-sticker-sheets" ui-sref-active="active">All Sticker-sheests</a>
+          </li>
+          <!--
+          <li ng-show="isGuest">
+            <a ui-sref="my-sticker-sheets" ui-sref-active="active">My Sticker-sheets</a>
+          </li>
+          -->
+          <li ng-hide="currentUser">
+            <a ui-sref="login" ui-sref-active="active">Log in</a>
+          </li>
+          <li ng-hide="currentUser">
+            <a ui-sref="sign-up" ui-sref-active="active">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
   <article ng-repeat="r in stickerSheets.slice().reverse()">
     <header>
+      <!-- 
       <h1>{{r.date | date}} | {{r.place.name}}</h1>
       <h2>{{r.user.email}}</h2>
+      -->
     </header>
 
-    <p>{{r.count}}</p>
-
-    <div id="stickersheet">
-    	<div ng-repeat="sticker in stickers" class="sticker" ng-class="{ 'active' : $index <= stickerCount() }"></div>
+    <!-- <p>{{r.count}}</p> -->
+    <div id="stickersheet-wrapper">
+      <div id="stickersheet" style="position: relative;">
+        <!-- <div style="position: absolute; bottom: 50px; left: 0; text-transform: uppercase; text-align: center; width: 100%;">Buy 9 get one free</div> -->
+      	<div ng-repeat="sticker in stickers" class="sticker" ng-class="{ 'active' : $index <= stickerCount() }"></div>
+      </div>
     </div>
-
   </article>
+
+  <div style="width: 100%; position: absolute; bottom: 0; left: 0; padding: 0;">
+  <div style="padding: 20px 0 30px 0; border-top: 1px solid rgba(255,255,255,0.3); height: 20px; margin: 0 20px;">
+    <p ng-show="currentUser" style="float: left; line-height: 30px;">{{currentUser.email}}</p>
+    <a ui-sref="logout" ui-sref-active="active" ng-show="currentUser" class="logout">Log out</a>
+  </div>
+</div>
 </section>

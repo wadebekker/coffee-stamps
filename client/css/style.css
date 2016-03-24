@@ -7,21 +7,33 @@ body {
   font-family:'Helvetica Neue', Helvetica, Arial, Sans-serif;
   font-size:1rem;
 }
+
+.logout {
+  padding:5px 10px;
+  float: right;
+  background:#c3512f;
+  color: #fff;
+  border-radius: 3px 3px;
+  text-decoration: none;
+}
 button {
-  background:#eee;
+  background:#c3512f;
   border:0;
-  color:#777;
+  color:#fff;
   cursor:pointer;
   font-family:'Helvetica Neue', Helvetica, Arial, Sans-serif;
   font-size:1rem;
-  padding:.5rem;
+  padding:15px 0;
+  display: block;
+  width: 100%;
+  border-radius: 3px 3px;
 }
 button:active {
-  background:#ddd;
+  background:#c3512f;
 }
 [disabled] {
-  background:#eee;
-  color:#ccc;
+  background:#c3512f;
+  color:#fff;
 }
 fieldset {
   color:#777;
@@ -43,7 +55,6 @@ select {
   text-overflow: "";
 }
 p {
-  padding:1rem;
 }
 /*header*/
 body > header {
@@ -88,39 +99,127 @@ main section article h2 {
   margin-bottom:1rem;
 }
 /*main form*/
+form {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  position: absolute; 
+  bottom: 0; 
+  left: 0;
+}
 main input,
 select,
 textarea {
-  background:#ddd;
-  border:0;
-  display:inline-block;
+  width: 100%;
+  background:none;
+  border: none;
+  border-bottom: 1px solid #333;
+  display:block;
   font-family:'Helvetica Neue', Helvetica, Arial, Sans-serif;
-  margin-bottom:1rem;
-  padding:.5rem;
+  margin: 0;
+  padding:15px 0;
   vertical-align:middle;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 0;
+  -webkit-appearance: none;
 }
 main select,
 textarea {
   width:300px;
 }
 
+body {
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  line-height: 18px;
+}
 
+a {
+  color: red;
+}
+
+.logo {
+  width: 230px;
+  height: 50px;
+  margin: 20px auto 0 auto;
+  background: url(../img/logo.svg) no-repeat 0 0;
+  background-size: 230px 50px;
+}
+
+
+
+#stickersheet-wrapper {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin: -145px 0 0 0;
+}
 #stickersheet { 
-  height: 200px; 
+  width: 220px;
+  height: 300px;
+  margin: 0 auto;
 }
 
   #stickersheet .sticker {
-    width: 40px; 
-    height: 40px; 
+    width: 60px; 
+    height: 60px; 
     background: none;
     box-sizing: border-box;
-    border: 1px solid #ddd; 
+    background: #fff url(../img/icon-cup-default.svg) no-repeat 0 0;
+    background-size: 60px 60px; 
     border-radius: 50%; 
-    margin: 0 10px 10px 0; 
+    margin: 0 20px 20px 0; 
     float: left;
+    position: relative;
+  }
+
+  #stickersheet .sticker:nth-child(3n+3) {
+    margin-right: 0;
   }
 
   #stickersheet .sticker.active {
     border: none;
-    background: blue;
+    background: #fff url(../img/icon-cup-active.svg) no-repeat 0 0;
+    background-size: 60px 60px; 
+  }
+
+  #stickersheet .sticker.active:after {
+    content: '';
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #bf9f37;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 1;
+  }
+
+  #stickersheet .sticker:last-of-type {
+    margin: 20px 0 0 80px;
+     background: #bf9f37 url(../img/icon-cup-free.svg) no-repeat 0 0;
+    background-size: 60px 60px; 
+  }
+
+  #stickersheet .sticker:last-of-type:after {
+    content: 'Free';
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.3);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: 1;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 52px;
+    font-weight: bold;
+    color: #000;
   }

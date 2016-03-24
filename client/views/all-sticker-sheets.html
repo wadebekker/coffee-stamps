@@ -1,4 +1,5 @@
 <section>
+<div style="padding: 20px;">
   <article ng-repeat="r in stickerSheets.slice().reverse()">
     <header>
       <h1>{{r.date | date}} | {{r.place.name}}</h1>
@@ -12,4 +13,5 @@
       <button a ui-sref="delete-sticker-sheet({ id: r.id })">Delete</button>
     </div>
   </article>
+</div>
 </section>

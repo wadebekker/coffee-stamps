@@ -1,23 +1,46 @@
 <section>
+<div style="padding: 20px;">
+  <header>
+      <div class="logo"></div>
+      <h2 ng-show="currentUser">{{currentUser.email}}</h2>
+      <!--
+      <nav>
+        <ul>
+          <li ng-show="isAdmin">
+            <a ui-sref="all-sticker-sheets" ui-sref-active="active">All Sticker-sheests</a>
+          </li>
+          <li ng-show="isGuest">
+            <a ui-sref="my-sticker-sheets" ui-sref-active="active">My Sticker-sheets</a>
+          </li>
+          <li ng-hide="currentUser">
+            <a ui-sref="login" ui-sref-active="active">Log in</a>
+          </li>
+          <li ng-show="currentUser">
+            <a ui-sref="logout" ui-sref-active="active">Log out</a>
+          </li>
+          <li ng-hide="currentUser">
+            <a ui-sref="sign-up" ui-sref-active="active">Sign up</a>
+          </li>
+        </ul>
+      </nav>
+      -->
+    </header>
   <form name="form" ng-submit="register()">
-    <fieldset>
-      <legend>Sign up form</legend>
-
       <div class="form-group">
-        <label>Email</label>
-        <input name="email" type="text" ng-model="user.email">
+        <!-- <label>Email</label> -->
+        <input name="email" type="text" ng-model="user.email" placeholder="Email Address">
       </div>
 
       <div class="form-group">
-        <label>Password</label>
-        <input name="password" type="password" ng-model="user.password">
+        <!-- <label>Password</label> -->
+        <input name="password" type="password" ng-model="user.password" placeholder="Create a Password" style="margin-bottom: 20px;">
       </div>
 
       <div class="actions">
-        <label></label>
         <button>Sign up</button>
       </div>
-    </fieldset>
+
+      <p style="text-align: center; margin: 0; padding: 30px 0 0 0;">Already signed up? <a ui-sref="login">Log In</a></p>
   </form>
-  <p>Already signed up? <a ui-sref="login">Log In</a></p>
+</div>
 </section>

@@ -5,8 +5,8 @@ angular
   .controller('AuthLoginController', ['$scope', 'AuthService', '$state',
   function($scope, AuthService, $state) {
     $scope.user = {
-      email: 'enter email address', // Create Placeholder
-      password: 'create a password' // Create Placeholder
+      // email: 'Email address', // Create Placeholder
+      // password: 'Password' // Create Placeholder
     };
 
     $scope.login = function() {
@@ -30,8 +30,8 @@ angular
   .controller('SignUpController', ['$scope', 'AuthService', '$state',
   function($scope, AuthService, $state) {  
     $scope.user = {
-      email: 'enter email address', // Create Placeholder
-      password: 'create a password' // Create Placeholder
+      // email: 'Email Address', // Create Placeholder
+      // password: 'Create a Password' // Create Placeholder
     };
 
     $scope.register = function() {
